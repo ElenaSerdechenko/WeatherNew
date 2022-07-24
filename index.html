@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Weather App</title>
+    <meta charset="UTF-8" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+   
+    
+  </head>
+  <style>
+    body {
+  background-image: url(images/blue-sky.jpg);
+    font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+}
+h1,
+h2 {
+  color: rgb(36, 41, 6);
+  font-size: 48px;
+  font-weight: bold;
+  padding: 0px 100px 0px 20px;
+  margin: 0 auto;
+}
+h3 {
+  color: rgb(160, 170, 18);
+  padding: 30px 20px 10px 20px;
+  font-size: 36px;
+  font-weight: bold;
+}
+.head {
+  display: block;
+  position: relative;
+  left: 250px;
+}
+
+.weather {
+  color: rgb(90, 86, 86);
+  padding: 20px 20px;
+  margin: 0px auto;
+  font-size: 26px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.container {
+  display: inline-flexbox;
+}
+.allelement {
+  display: block;
+  margin: 10px 1000px 20px 10px;
+  border: 3px solid rgb(77, 100, 175);
+  border-radius: 20px;
+  opacity: 1;
+}
+.units {
+  font-size: 15px;
+}
+.search-bar{
+ display: inline-block;
+        margin-left: 27px;
+        width: 30%;
+        border: 2px solid #d3d3d3;
+        border-radius: 9px;
+        padding-top: 9px;
+        padding-bottom: 9px;
+        text-indent: 15px;
+        font-size: 20px;
+     
+        color: #5d5d91;
+}
+.search-button{
+    position: relative;
+        top: 2px;
+        left: 13px;
+        background-color: #a9c448;
+        border: none;
+        border-radius: 8px;
+        color: white;
+        font-size: 25px;
+        padding: 7px 16px;
+}
+
+  </style>
+  <body>
+
+    <div class="allelement">
+      <br />
+      <div class="head">
+        <form id="search-form">
+         
+          <input type="text" placeholder="Enter your city" id="city-name" class ="search-bar" />
+          <input type="submit" value="Search" class=" search-button" />
+        </form>
+      </div>
+      <br />
+      <h1>Frankfurt Am Main</h1>
+
+      <h2>
+        <span class = "temperature" id="temperature"> </span> 
+        <span class="units">
+          <a href = "#" id = "celsius">°C</a> |
+          <a href = "#" id ="fahr-link">°F</a>
+      </h2>
+
+      <h3 id="date">
+        Sunday 18:30
+      </h3>
+
+      <div class="weather">
+        <div><span id="sky">Cloudy</span></div>
+        <div>Wind: <span id="wind"></span> km/h</div>
+        <div>Rel.Humidity: <span id="humidity"></span>%</div>
+      </div>
+        <script src="src/index.js"></script>
+    </body>
