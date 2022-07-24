@@ -38,6 +38,7 @@ function showCurTemp(response) {
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#sky").innerHTML =
     response.data.weather[0].description;
+  // celsuisTemp = response.data.main.temp;
 }
 
 function showCity(event) {
@@ -57,5 +58,24 @@ function showCity(event) {
 
   axios.get(apiUrl).then(showCurTemp);
 }
+function changeToFahr(event) {
+  event.preventDefault();
+  let tempElem = document.querySelector("#temperature");
+  let temperature = tempElem.innerHTML;
+  temperature = Number(temperature);
+  tempElem.innerHTML = Math.round(temperature + 9) / 5 + 32;
+}
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", showCity);
+
+// function showCels(event) {
+//   event.preventDefault();
+//   let tempElem2 = document.querySelector("#temperature");
+//   let temperature2 = response.data.main.temp;
+//   temperature2 = Number(temperature);
+//   tempElem2.innerHTML = Math.round(temperature);
+// }
+let fahrTemp = document.querySelector("#fahrlink");
+fahrTemp.addEventListener("click", changeToFahr);
+// let celsTemp = document.querySelector("#celsius");
+// celsTemp.addEventListener("click", showCels);
